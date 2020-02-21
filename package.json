@@ -1,0 +1,21 @@
+{
+  "name": "value-card-app",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.20.10",
+    "pg": "^7.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}
